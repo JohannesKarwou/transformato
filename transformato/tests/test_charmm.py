@@ -83,12 +83,12 @@ def test_run_28_1h1q_rsfe_analysis_with_CHARMM():
     print(f"Free energy difference: {ddG_openMM} +- {dddG} [kT")
 
 
-@pytest.mark.rsfe
-@pytest.mark.charmm
-@pytest.mark.skipif(
-    os.getenv("CI") == "true",
-    reason="Skipping tests that cannot pass in github actions",
-)
+# @pytest.mark.rsfe
+# @pytest.mark.charmm
+# @pytest.mark.skipif(
+#     os.getenv("CI") == "true",
+#     reason="Skipping tests that cannot pass in github actions",
+# )
 def test_run_1a0q_1a07_rsfe_production_with_CHARMM(caplog):
 
     from transformato import (
@@ -98,6 +98,7 @@ def test_run_1a0q_1a07_rsfe_production_with_CHARMM(caplog):
         load_config_yaml,
     )
     from transformato.mutate import perform_mutations
+    from transformato.utils import run_simulation
 
     workdir = "/site/raid4/johannes/test"
     conf = "transformato/tests/config/test-1a0q-1a07-rsfe.yaml"
@@ -124,7 +125,7 @@ def test_run_1a0q_1a07_rsfe_production_with_CHARMM(caplog):
         i=i,
         mutation_list=mutation_list,
     )
-    # run_simulation(i.output_files, engine="CHARMM")
+    run_simulation(i.output_files, engine="openMM")
 
     # ddG_openMM, dddG = postprocessing(
     #     configuration,
