@@ -1,6 +1,7 @@
 import os
 import pytest
 import warnings
+
 warnings.filterwarnings("ignore", module="parmed")
 
 
@@ -99,8 +100,10 @@ def test_run_1a0q_1a07_rsfe_production_with_CHARMM(caplog):
     )
     from transformato.mutate import perform_mutations
     from transformato.utils import run_simulation
+    from transformato.tests.paths import get_test_output_dir
 
-    workdir = "/site/raid4/johannes/test"
+    # workdir = "/site/raid4/johannes/test"
+    workdir = get_test_output_dir()
     conf = "transformato/tests/config/test-1a0q-1a07-rsfe.yaml"
     configuration = load_config_yaml(
         config=conf, input_dir="data/test_systems_mutation", output_dir=workdir
@@ -134,6 +137,8 @@ def test_run_1a0q_1a07_rsfe_production_with_CHARMM(caplog):
     #     max_snapshots=5000,
     # )
     # print(ddG_openMM, dddG)
+
+    # print(f'The result {ddG_openMM},{dddG}')
 
 
 @pytest.mark.rsfe
