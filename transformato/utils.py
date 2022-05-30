@@ -99,7 +99,7 @@ def run_simulation(output_files: list, engine="openMM", only_vacuum: bool = Fals
             calculate_solv_and_vac = 1
 
         exe = subprocess.run(
-            ["bash", f"{str(path)}/{runfile}", str(path), str(calculate_solv_and_vac)],
+            ["bash", f"{str(path)}{runfile}", str(path), str(calculate_solv_and_vac)],
             check=True,
             capture_output=True,
             text=True,
