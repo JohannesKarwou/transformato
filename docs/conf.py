@@ -17,15 +17,15 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 
-import transformato
+import protex
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'transformato'
-copyright = ("2022, Marcus Wieder, Johannes Karwounopoulos, Stefan Boresch. Project structure based on the "
-             "Computational Molecular Science Python Cookiecutter version 1.1")
-author = 'Marcus Wieder, Johannes Karwounopoulos, Stefan Boresch'
+project = 'protex'
+copyright = ("2021, Marcus Wieder. Project structure based on the "
+             "Computational Molecular Science Python Cookiecutter version 1.5")
+author = 'Marcus Wieder'
 
 # The short X.Y version
 version = ''
@@ -53,12 +53,9 @@ extensions = [
 ]
 
 autosummary_generate = True
-napoleon_google_docstring = True
-napoleon_use_param = True
+napoleon_google_docstring = False
+napoleon_use_param = False
 napoleon_use_ivar = True
-napoleon_use_keyword = True
-napoleon_use_rtype = True
-autodoc_typehints="description"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -77,7 +74,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = "en"
+language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -106,11 +103,6 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_logo="assets/images/logo_transformato.png"
-html_theme_options={
-	"logo_only":True,
-    "navigation_depth":4
-}
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
@@ -125,7 +117,7 @@ html_theme_options={
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'transformatodoc'
+htmlhelp_basename = 'protexdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -152,8 +144,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'transformato.tex', 'transformato Documentation',
-     'transformato', 'manual'),
+    (master_doc, 'protex.tex', 'protex Documentation',
+     'protex', 'manual'),
 ]
 
 
@@ -162,7 +154,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'transformato', 'transformato Documentation',
+    (master_doc, 'protex', 'protex Documentation',
      [author], 1)
 ]
 
@@ -173,11 +165,10 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'transformato', 'transformato Documentation',
-     author, 'transformato', 'Workflow to set up a relative free energy calculation of ligands with a common core scaffold',
+    (master_doc, 'protex', 'protex Documentation',
+     author, 'protex', 'Proton exchange using SAMS and openMM for ionic liquids',
      'Miscellaneous'),
 ]
 
 
 # -- Extension configuration -------------------------------------------------
-
