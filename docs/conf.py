@@ -17,12 +17,12 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 
-import protex
+import transformato
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'protex'
+project = 'transformato'
 copyright = ("2021, Marcus Wieder. Project structure based on the "
              "Computational Molecular Science Python Cookiecutter version 1.5")
 author = 'Marcus Wieder'
@@ -117,7 +117,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'protexdoc'
+htmlhelp_basename = 'transformatodoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -144,8 +144,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'protex.tex', 'protex Documentation',
-     'protex', 'manual'),
+    (master_doc, 'transformato.tex', 'transformato Documentation',
+     'transformato', 'manual'),
 ]
 
 
@@ -154,7 +154,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'protex', 'protex Documentation',
+    (master_doc, 'transformato', 'transformato Documentation',
      [author], 1)
 ]
 
@@ -165,8 +165,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'protex', 'protex Documentation',
-     author, 'protex', 'Proton exchange using SAMS and openMM for ionic liquids',
+    (master_doc, 'transformato', 'transformato Documentation',
+     author, 'transformato', 'Proton exchange using SAMS and openMM for ionic liquids',
      'Miscellaneous'),
 ]
 
