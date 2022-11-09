@@ -885,6 +885,28 @@ class FreeEnergyCalculator(object):
             f"Free energy to common core: {energy_estimate} [kT] with uncertainty: {uncertainty} [kT]."
         )
 
+    def show_reduced_summary(self):
+
+        if (
+            self.configuration["simulation"]["free-energy-type"] == "rsfe"
+            or self.configuration["simulation"]["free-energy-type"] == "asfe"
+        ):
+            self.plot_free_energy_overlap("vacuum")
+            self.plot_free_energy_overlap("waterbox")
+            self.plot_free_energy("vacuum")
+            self.plot_free_energy("waterbox")
+        else:
+            self.plot_free_energy_overlap("waterbox")
+            self.plot_free_energy_overlap("complex")
+            self.plot_free_energy("waterbox")
+            self.plot_free_energy("complex")
+
+        energy_estimate, uncertainty = self.end_state_free_energy_difference
+        print(
+            f"Free energy to common core: {energy_estimate} [kT] with uncertainty: {uncertainty} [kT]."
+        )
+
+        
     def detailed_overlap(self, env):
 
         mbar_matrix = self.free_energy_overlap(env=env)
