@@ -906,7 +906,6 @@ class FreeEnergyCalculator(object):
             f"Free energy to common core: {energy_estimate} [kT] with uncertainty: {uncertainty} [kT]."
         )
 
-        
     def detailed_overlap(self, env):
 
         mbar_matrix = self.free_energy_overlap(env=env)
