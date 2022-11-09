@@ -92,8 +92,7 @@ class IntermediateStateFactory(object):
                 fout.write(line)
         fin.close()
         fout.close()
-        
-        
+
     def create_endstate_correction(self):
 
         logger.info(f"Will create script for endstate correction")
@@ -138,7 +137,7 @@ class IntermediateStateFactory(object):
             else:
                 fout.write(line)
         fin.close()
-        fout.close()        
+        fout.close()
 
     def write_state(
         self,
